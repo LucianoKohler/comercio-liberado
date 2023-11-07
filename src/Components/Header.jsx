@@ -13,8 +13,10 @@ export default function Header() {
           setProdutos({itens: response.data});
       };
   
-  const handleInputChange = e => setQuery(e.target.value);
-
+  const handleInputChange = e => {
+    setQuery(e.target.value);
+    console.log(query)
+  }
   const handleSubmit = e => {
     e.preventDefault();
       fetchItems(query);
