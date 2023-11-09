@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/comercio-liberado/static/css/main.ad2a1085.css",
-    "main.js": "/comercio-liberado/static/js/main.ee413683.js",
+    "main.js": "/comercio-liberado/static/js/main.b43eda37.js",
     "static/media/logo.png": "/comercio-liberado/static/media/logo.a699a48c85c77fbbebca.png",
     "index.html": "/comercio-liberado/index.html",
     "main.ad2a1085.css.map": "/comercio-liberado/static/css/main.ad2a1085.css.map",
-    "main.ee413683.js.map": "/comercio-liberado/static/js/main.ee413683.js.map"
+    "main.b43eda37.js.map": "/comercio-liberado/static/js/main.b43eda37.js.map"
   },
   "entrypoints": [
     "static/css/main.ad2a1085.css",
-    "static/js/main.ee413683.js"
+    "static/js/main.b43eda37.js"
   ]
 }
