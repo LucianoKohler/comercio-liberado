@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Body from '../Components/Body';
 import HomeScreen from '../Screens/HomeScreen';
-import PesquisaScreen from '../Screens/PesquisaScreen';
+// import PesquisaScreen from '../Screens/PesquisaScreen';
 
 export default function Router(){
   return (
@@ -10,7 +10,7 @@ export default function Router(){
       <Routes>
         <Route element={<Body />} path="/">
           <Route element={<HomeScreen />}path='/' />
-          <Route element={<PesquisaScreen />}path='/query' />
+          {/* <Route element={<PesquisaScreen />}path='/query' /> */}
 
         </Route>
       </Routes>
