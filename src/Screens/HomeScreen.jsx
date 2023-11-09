@@ -5,15 +5,19 @@ export default function HomeScreen() {
   let produtos = JSON.parse(localStorage.getItem("produtos"));
 
   let updateProducts = () => {
-          return produtos.map((produto) => (
+    if(Array.isArray(produtos)){
+      return produtos.map((produto) => (
         <Card
-          key={produto.key}
-          permalink={produto.permalink}
-          title={produto.title}
-          price={produto.price}
-          image={produto.thumbnail}
+        key={produto.key}
+        permalink={produto.permalink}
+        title={produto.title}
+        price={produto.price}
+        image={produto.thumbnail}
         />
-      ));
+        ));
+      }else{
+        return <h1>Erro na procura de produtos! Use a barra no cabeçalho para procurar algo</h1>
+      }
   };
 
   return (

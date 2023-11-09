@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.png";
-import { useState } from "react";
 import api from "../api/api";
 
 export default function Header() {
-  const [query, setQuery] = useState("");
 
   async function fetchItems(query) {
     const response = await api.get(
@@ -13,6 +11,7 @@ export default function Header() {
     );
 
     const produtos = response.data.results.map((result) => ({
+      key: result.id,
       title: result.title,
       price: result.price,
       thumbnail: result.thumbnail,
@@ -22,14 +21,22 @@ export default function Header() {
     window.location.reload() //Atualizar a página e re-renderizar os produtos
   };
 
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-    console.log(query);
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchItems(query);
+    let query = document.getElementById("query").value;
+
+    // Verificar se há algo no input
+    if(query){
+      fetchItems(query);
+    }else{
+      fetchItems("tecnologia");
+    }
   };
+
+  //Se não houverem pesquisas nem produtos
+  if (localStorage.getItem("produtos") === null) {
+    fetchItems("tecnologia");
+  }
 
   return (
     <div className="bg-[#fdf163] p-3 flex flex-row justify-between items-center">
@@ -42,8 +49,7 @@ export default function Header() {
       <div>
         <form id="form" onSubmit={handleSubmit}>
           <input
-            onChange={handleInputChange}
-            value={query}
+            id="query"
             className="rounded-md p-1 w-[250px]"
             type="text"
           />
