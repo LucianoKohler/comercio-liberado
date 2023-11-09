@@ -8,10 +8,9 @@ export default function Router(){
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Body />} path="/">
-          <Route element={<HomeScreen />}path='/' />
+        <Route element={<Body />} exact path="/">
+          <Route element={<HomeScreen />} exact path='/' />
           {/* <Route element={<PesquisaScreen />}path='/query' /> */}
-
         </Route>
       </Routes>
     </BrowserRouter>
